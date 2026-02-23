@@ -5,9 +5,8 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // Imposta il base path corretto per GitHub Pages
-  // Sostituisci "md-to-web-charm" se il nome del repo è diverso
-  base: mode === "production" ? "/paydex/" : "/",
+  // Base path per Vercel: sito servito a root (/)
+  base: "/",
   build: {
     outDir: "docs",
   },
