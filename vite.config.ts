@@ -7,7 +7,7 @@ import { componentTagger } from "lovable-tagger";
 export default defineConfig(({ mode }) => ({
   // Imposta il base path corretto per GitHub Pages
   // Sostituisci "md-to-web-charm" se il nome del repo è diverso
-  base: mode === "production" ? "/md-to-web-charm/" : "/",
+  base: mode === "production" ? "/paydex/" : "/",
   build: {
     outDir: "docs",
   },
