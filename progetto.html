@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il Progetto - PayDex</title>
+    <meta name="description" content="Scopri i dettagli, i ruoli e la struttura del progetto PayDex.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">🤖 PayDex</div>
+            <nav class="nav">
+                <a href="index.html">Home</a>
+                <a href="progetto.html" class="active">Progetto</a>
+                <a href="about.html">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>Il Progetto</h1>
+        <p>PayDex nasce principalmente come esercizio di programmazione e come opportunità per sviluppare e migliorare le proprie competenze tecniche. Alcune funzionalità sono state inoltre realizzate su richiesta di utenti all'interno di contesti di roleplay.</p>
+
+        <section class="intro">
+            <h2>🎤 Introduzione</h2>
+            <p>Il sistema è basato su due ruoli (Admin e Dipendenti), differenziando in base all'utente quali comandi e quali dati sono visibili.</p>
+        </section>
+
+        <section class="roles">
+            <h2>👥 Ruoli nel Sistema</h2>
+            
+            <div class="card">
+                <h3>👑 Admin</h3>
+                <p>Il livello più alto. I loro ID Telegram sono scritti esplicitamente nel file di configurazione iniziale.</p>
+                <ul>
+                    <li>Godono di permessi completi di visione di tutti i dati aziendali.</li>
+                    <li>Possono modificare la lista dipendenti.</li>
+                    <li>Possono aggiungere nuovi admin tramite il comando <code>/add_admin [id_utente]</code> (richiede almeno un amministratore iniziale nel file di configurazione).</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>💼 Dipendenti</h3>
+                <p>Aggiunti dagli admin tramite username (<code>@username</code>).</p>
+                <ul>
+                    <li>Possono consultare e registrare unicamente i propri scontrini o quelli concordati.</li>
+                    <li>All'inserimento dei dati, un sistema controlla se l'utente che usa il bot si trova nella lista dipendenti o in quella admin.</li>
+                </ul>
+            </div>
+        </section>
+
+        <h1>🚀 Le Funzionalità nel Dettaglio</h1>
+        
+        <section class="command-group">
+            <h2>1. Comandi Generali</h2>
+            <div class="card">
+                <ul>
+                    <li><code>/start</code>: Invia un messaggio di benvenuto all'utente con una breve descrizione delle funzionalità del bot.</li>
+                    <li><code>/help</code>: Mostra la guida di tutti i comandi disponibili e chiari, divisi per ruolo (Generali, Dipendenti, Admin).</li>
+                    <li><code>/annulla</code>: Ferma bruscamente una conversazione interattiva ("ConversationHandler"), utile nel caso l'utente volesse abbandonare un form d'inserimento.</li>
+                </ul>
+                <div class="image-placeholder">
+                    <img src="images/help_message.png" alt="Esempio comando help" loading="lazy">
+                    <span>TODO: Inserire l'immagine in images/help_message.png</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="command-group">
+            <h2>2. Comandi per i Dipendenti</h2>
+            
+            <div class="card">
+                <h3>🧾 /scontrino</h3>
+                <p>Avvia un form multi-fase per la creazione di una nuova ricevuta:</p>
+                <ol>
+                    <li>Verifica dei permessi (solo dipendenti o admin).</li>
+                    <li>Scelta del <strong>nome del dipendente</strong> (da tastiera a schermo).</li>
+                    <li>Inserimento elenco <strong>articoli</strong> separati da virgola.</li>
+                    <li>Inserimento <strong>prezzo totale</strong> (sostituisce in automatico la virgola col punto).</li>
+                    <li>Inserimento <strong>data</strong> ("oggi" o in formato gg/mm/aaaa).</li>
+                    <li>Genera l'oggetto JSON, lo salva sul Database e stampa un riepilogo.</li>
+                </ol>
+            </div>
+
+            <div class="card">
+                <h3>📋 /lista</h3>
+                <p>Consulta il database e stampa <strong>esclusivamente i propri scontrini</strong> (carrello, prezzo e data).</p>
+                <div class="image-placeholder">
+                    <img src="images/scontrini_utente.png" alt="Lista scontrini utente" loading="lazy">
+                    <span>TODO: Immagine scontrini_utente.png</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>📊 /statistiche</h3>
+                <p>Stampa il <strong>fatturato personale</strong>, la <strong>quantità totale</strong> di scontrini registrati e indica se si è il dipendente col maggior numero di incassi aziendali.</p>
+                <div class="image-placeholder">
+                    <img src="images/stats_dip.png" alt="Statistiche dipendente" loading="lazy">
+                    <span>TODO: Immagine stats_dip.png</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="command-group">
+            <h2>3. Comandi Gestionali per Admin</h2>
+            <p>Tutti i comandi seguenti passano un <strong>Check Admin</strong> iniziale invisibile prima di procedere, bloccando l'esecuzione in caso negativo.</p>
+            
+            <div class="card">
+                <h3>Gestione Utenti</h3>
+                <ul>
+                    <li><code>/dipendenti_add [@username]</code>: Inserisce e memorizza nel JSON in Firestore un nuovo dipendente. Impedisce duplicazioni.</li>
+                    <li><code>/dipendenti_remove [@username]</code>: Rimuove il dipendente dal database per revocargli gli accessi.</li>
+                    <li><code>/dipendenti</code>: Stampa a visuale di lista tutti gli attuali dipendenti abilitati.</li>
+                    <li><code>/add_admin [id_utente]</code>: Inserisce un nuovo amministratore.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Amministrazione Scontrini</h3>
+                <ul>
+                    <li><strong><code>/lista</code> (Potenziato):</strong> L'admin vede la lista raggruppata per persona di <strong>tutti gli scontrini</strong> aziendali.
+                        <div class="image-placeholder">
+                            <img src="images/scontrini_adm.png" alt="Lista scontrini admin" loading="lazy">
+                            <span>TODO: Immagine scontrini_adm.png</span>
+                        </div>
+                    </li>
+                    <li><strong><code>/elimina_scontrino</code>:</strong> Avvia il flow di cancellazione di uno scontrino inviato erroneamente (scelta utente &rarr; lista numerata &rarr; invio indice da eliminare).</li>
+                    <li><strong><code>/cerca [testo]</code>:</strong> Tool di controllo combinato globale. Cerca scontrini per articoli, venditore o data (es. <code>/cerca @mario 01/2026</code>).</li>
+                    <li><strong><code>/statistiche</code> (Dashboard Admin):</strong> Mostra incasso totale globale, miglior dipendente assoluto e dettaglio per dipendente in ordine decrescente.
+                        <div class="image-placeholder">
+                            <img src="images/stats_adm.png" alt="Statistiche admin" loading="lazy">
+                            <span>TODO: Immagine stats_adm.png</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="footer-logo">🤖 PayDex</span>
+                    <p class="footer-tagline">Bot Telegram per la gestione degli scontrini. Progetto didattico e per roleplay.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigazione</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="progetto.html">Progetto</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 PayDex · Tutti i contenuti sono fittizi e a scopo didattico</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

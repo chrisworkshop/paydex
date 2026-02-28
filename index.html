@@ -1,23 +1,67 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="it">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PayDex — Bot Telegram per la Gestione degli Scontrini</title>
-    <meta name="description" content="PayDex è un bot Telegram per registrare, cercare e analizzare scontrini. Progetto didattico con Python e Firestore." />
-    <meta name="author" content="PayDex" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayDex - Bot Telegram Gestione Scontrini</title>
+    <meta name="description" content="PayDex è un bot Telegram in Python per la gestione fittizia di scontrini e contabilità per roleplay.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">🤖 PayDex</div>
+            <nav class="nav">
+                <a href="index.html" class="active">Home</a>
+                <a href="progetto.html">Progetto</a>
+                <a href="about.html">About</a>
+            </nav>
+        </div>
+    </header>
 
-    <meta property="og:title" content="PayDex — Bot Telegram Gestione Scontrini" />
-    <meta property="og:description" content="Registra, cerca e analizza scontrini direttamente da Telegram." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+    <main class="container">
+        <section class="hero">
+            <h1>🤖 PayDex</h1>
+            <p class="subtitle">Bot Telegram per la Gestione degli Scontrini</p>
+            <p><strong>PayDex</strong> è un bot Telegram sviluppato in Python utilizzando la libreria <code>python-telegram-bot</code> integrato con un database NoSQL. Il progetto ha l'obiettivo di gestire la contabilità di base di una ipotetica azienda, la registrazione di scontrini e le statistiche dei dipendenti.</p>
+            <a href="progetto.html" class="btn">Scopri il Progetto</a>
+        </section>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+        <section class="warning-card">
+            <h2>⚠️ Avvertenza Importante</h2>
+            <p>Questo BOT Telegram è stato sviluppato <strong>esclusivamente</strong> per scopi di gioco di ruolo e didattici (roleplay). Non è pensato né testato per l'impiego in contesti reali: tutte le attività, gli scontrini e i profili presenti sono <strong>fittizi</strong> e generati per la simulazione.</p>
+            <ul>
+                <li><strong>Uso previsto:</strong> roleplay / finalità didattiche</li>
+                <li><strong>Dati:</strong> interamente fittizi, non rappresentativi di persone o aziende reali</li>
+                <li><strong>Limitazioni:</strong> non idoneo per monitoraggio reale né per utilizzi soggetti a vincoli normativi</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="footer-logo">🤖 PayDex</span>
+                    <p class="footer-tagline">Bot Telegram per la gestione degli scontrini. Progetto didattico e per roleplay.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigazione</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="progetto.html">Progetto</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 PayDex · Tutti i contenuti sono fittizi e a scopo didattico</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
 </html>
