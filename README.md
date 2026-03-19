@@ -18,7 +18,7 @@
 
 > È basato su un sistema a due ruoli (Admin e Dipendenti), differenziando in base all'utente quali comandi e quali dati sono visibili. In allegato è mostrato il comando `/help`, che illustra tutte le funzionalità e i possibili scenari di utilizzo del bot.
 
-<img src="help_message.png" alt="help_message_image" width="400">
+<img src="imgas/help_message.png" alt="help_message_image" width="400">
 
 ## 👥 Ruoli
 
@@ -48,8 +48,8 @@
   - **Versione Dipendente**: Consulta il database e stampa **esclusivamente i propri scontrini** (carrello, prezzo e data).
   - **Versione Admin**: Consulta il database e stamta **tutti gli scontrini** dei dipendenti che hanno fatto registrato **almeno** uno scontrino e lo stampa diviso in liste
 
-  <img src="scontrini_utente.png" alt="help_message_image" width="400"> <br>
-  <img src="scontrini_adm.png" alt="help_message_image" width="400">
+  <img src="images/scontrini_utente.png" alt="help_message_image" width="400"> <br>
+  <img src="images/scontrini_adm.png" alt="help_message_image" width="400">
 
 > Qui sopra presenti i due tipi di liste degli scontrini che vengono stampate, la prima immagine rappresenta tutti gli `scontrini personali`, mentre la seconda immagine stampa `tutti gli scontrini` di ogni singolo dipendente che ne abbia fatto **almeno** uno. <br>
 > **IMPORTANTE:** sono stati censurati gli username dei tester per **privacy**!
@@ -58,8 +58,8 @@
   - **Versione Dipendente**: Stampa il **fatturato personale**, la **quantità totale degli scontrini registrati personalmente** e risponde banalmente "Sì" o "No" nel caso si sia il dipendente col maggior numero di incassi dell'azienda in assoluto.
   - **Versione Admin**: Stampa il **totate guadagnato dall'azienda**, il **numero totale degli scontrini effettuati**, indica il **miglior dipendente** tramite username e guadagno, infine viene inserito un **dettaglio** di ogni singolo dipendente.
 
-  <img src="stats_dip.png" alt="help_message_image" width="400"> <br>
-  <img src="stats_adm.png" alt="help_message_image" width="400">
+  <img src="images/stats_dip.png" alt="help_message_image" width="400"> <br>
+  <img src="images/stats_adm.png" alt="help_message_image" width="400">
 
 > Qui sopra presenti i due tipi di statistiche che vengono date, la prima immagine `statistiche dipendenti` e la seconda immagine relativa alle `statistiche admin` <br>
 > **IMPORTANTE:** sono stati censurati gli username dei tester per **privacy**!
