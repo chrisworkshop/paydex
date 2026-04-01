@@ -18,7 +18,7 @@
 
 > È basato su un sistema a due ruoli (Admin e Dipendenti), differenziando in base all'utente quali comandi e quali dati sono visibili. In allegato è mostrato il comando `/help`, che illustra tutte le funzionalità e i possibili scenari di utilizzo del bot.
 
-<img src="imgas/help_message.png" alt="help_message_image" width="400">
+<img src="images/help_message.png" alt="help_message_image" width="400">
 
 ## 👥 Ruoli
 
